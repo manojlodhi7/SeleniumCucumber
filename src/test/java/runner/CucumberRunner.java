@@ -18,6 +18,7 @@ import cucumber.api.junit.Cucumber;
 		plugin = {"pretty", "html: target/cucumber-reports/reports",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 		monochrome = true,
+		dryRun = false,
 		tags = {"@IntegrationTest"}
 		)
 

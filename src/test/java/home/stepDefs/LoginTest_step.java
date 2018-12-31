@@ -21,10 +21,10 @@ public class LoginTest_step {
 		new LoginPage2(driver).getUrl();
 	}
 
-	@When("^user enters username and Password$")
-	public void user_enters_username_and_Password() throws Throwable {
-		new LoginPage2(driver).enterUserName("manoj");
-		new LoginPage2(driver).enterPassword("manoj");
+	@When("^user enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_username_and_Password(String userName, String passWord) throws Throwable {
+		new LoginPage2(driver).enterUserName(userName);
+		new LoginPage2(driver).enterPassword(passWord);
 	}
 	
 	@When("^user clicks on login button$")
