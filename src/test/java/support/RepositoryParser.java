@@ -4,9 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import com.cucumber.listener.Reporter;
 
 
 public class RepositoryParser{
@@ -28,10 +26,9 @@ public class RepositoryParser{
 	public By getLocators(String locatorName) {
 		
 		String locatorProperty = loginPage.getProperty(locatorName);
-		System.out.println(locatorProperty.toString());
+		Reporter.addStepLog("Getting locator value");
 		String locatorType = locatorProperty.split(":")[0];
 		String locatorValue = locatorProperty.split(":")[1];
-		System.out.println("locatorValue  :" +locatorValue);
 		
 		By locator = null;
 		switch(locatorType)
@@ -60,19 +57,5 @@ public class RepositoryParser{
 		}
 		return locator;
 	}
-	
-//	public static void main(String args[]) throws IOException {
-//		RepositoryParser obj = new RepositoryParser("src/test/java/support/resources/LoginPage.properties");
-//		
-//		System.out.println("sds:"+obj.getLocators("userName"));
-//		
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--disable-notifications");
-//		System.setProperty("webdriver.chrome.driver", "src/test/java/support/drivers/chromedriver.exe");
-//		driver = new ChromeDriver(options);
-//		driver.manage().window().maximize();
-//		driver.get("C:/Users/DjanGo/workspaceManoj/loginForm/src/loginFormHtml/LoginPage.html");
-//		driver.findElement(RepositoryParser.getLocators("userName")).sendKeys("manoj");
-//	}
 	
 }
