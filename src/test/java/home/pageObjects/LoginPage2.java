@@ -10,13 +10,12 @@ import org.openqa.selenium.WebElement;
 import support.RepositoryParser;
 import support.TestBase;
 
-public class LoginPage2 extends TestBase{
+public class LoginPage2 {
 
 	public WebDriver driver;
 	RepositoryParser parser;
 	
 	public LoginPage2(WebDriver driver) throws IOException{
-		super(driver);
 		this.driver = driver;
 		parser = new RepositoryParser("src/test/java/support/resources/LoginPage.properties");
 	}    
