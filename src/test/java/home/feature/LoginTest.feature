@@ -1,6 +1,6 @@
 Feature: Verify login functionality
 
-  #@IntegrationTest
+  @IntegrationTest
   Scenario Outline: Login as a authenticated user
     Given user is  on homepage
     And user enters "<username>" and "<Password>"
