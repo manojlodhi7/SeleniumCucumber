@@ -15,6 +15,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features= {"src/test/java/home/feature"},
 		glue = {"home/stepDefs"},
+		format = {"json:target/cucumber.json"},
 		plugin = {"pretty", "html:target/cucumber-reports/reports",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 		monochrome = true,
